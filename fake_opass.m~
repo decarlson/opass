@@ -51,7 +51,7 @@ for t=2:N
         sdlcLam=logdet2(c);
         innerProduct=ya'*Lam{c}*ya;
         termllk(c)=sdlcLam-.5*innerProduct;
-        termnorm(c)=K/2*log(kappa(c)/(1+kappa(c)))+.5/(kappa(c)+1)*innerProduct;
+        termnorm(c)=K/2*log(kappa(c)/(1+kappa(c)));%+.5/(kappa(c)+1)'*innerProduct;
         termwish(c)=-(nu(c)+1)/2*log(1+kappa(c)/(kappa(c)+1)*innerProduct/nu(c))...
                -sdlcLam+K*log(nu(c))/2+.5*kappa_0/(kappa_0+1)*innerProduct;
     end
